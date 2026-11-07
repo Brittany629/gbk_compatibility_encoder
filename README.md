@@ -51,3 +51,10 @@ one codec call, while a string with a single PUA character takes a slower path
 for every character. It also means `encode_string` raises `UnicodeEncodeError`
 for unmappable characters rather than silently dropping them, so callers who
 want lossy behaviour must catch the exception themselves.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
