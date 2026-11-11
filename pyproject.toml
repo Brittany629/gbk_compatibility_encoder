@@ -1,6 +1,6 @@
 [project]
 name = "gbk-compatibility-encoder"
-version = "0.1.0"
+version = "0.1.1"
 description = "Encodes Unicode text to GBK bytes, including the Private Use Area code points that Microsoft's CP936 extension maps but the standard GBK codec rejects."
 requires-python = ">=3.10"
 dependencies = []
